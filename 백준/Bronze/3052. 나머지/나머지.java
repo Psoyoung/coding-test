@@ -9,14 +9,9 @@ public class Main {
         int count = 0;
 
         for(int i = 0; i < rest.length; i++){
+            rest[i] = sc.nextInt() % 42;
 
-            int a = sc.nextInt();
-            rest[i] = a % 42;
-        }
-
-        for(int i = 1; i < rest.length; i++) {
             for(int j = 0; j < i; j++){
-
                 if(rest[i] == rest[j]){
                     count ++;
                     break;
