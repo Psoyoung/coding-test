@@ -5,10 +5,8 @@ public class Solution {
         Scanner sc = new Scanner(System.in);
         String a = sc.next();
         
-        char[] change = a.toCharArray();
-        
-        for(int i = 0; i < change.length; i++){
-            System.out.println(change[i]);  
+        for(char c : a.toCharArray()){
+            System.out.println(c);  
         }    
     }
 }
