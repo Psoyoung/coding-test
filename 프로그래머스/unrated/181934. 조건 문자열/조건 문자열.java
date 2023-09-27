@@ -1,17 +1,6 @@
 class Solution {
     public int solution(String ineq, String eq, int n, int m) {
-        int answer = 0;
-
-        if(eq.equals("!")){
-            answer = compare(n, m, ineq);
-        }
-        else{
-            answer = compare(n ,m, ineq);
-        }
-
-        System.out.println(answer);
-        
-        return answer;
+        return compare(n, m, ineq);
     }
     
     public static int compare(int n, int m, String ineq){
