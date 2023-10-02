@@ -6,11 +6,11 @@ class Solution {
         for(int i = 0; i < len; i++){
             for(int j = 0; j < len; j++) {
                 if (board[i][j] == 1) {
-                    System.out.println();
                     int top = i - 1;
                     int bottom = i + 1;
                     int left = j - 1;
                     int right = j + 1;
+                    
                     if(top >= 0){
                         board[top][j] = board[top][j] == 1 ? 1 : 2;
                         if(left >= 0) board[top][left] = board[top][left] == 1 ? 1 : 2;
