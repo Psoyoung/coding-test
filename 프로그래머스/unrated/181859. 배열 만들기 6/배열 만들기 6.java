@@ -2,21 +2,19 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] arr) {
-        ArrayList<Integer> stk = new ArrayList<>();
+        Stack<Integer> stk = new Stack<>();
         
         for(int i = 0; i < arr.length; i++){
            if(stk.isEmpty()) {
-              stk.add(arr[i]);
+              stk.push(arr[i]);
+           }else if(stk.peek() == arr[i]){
+              stk.pop();
            }else{
-              if(stk.get(stk.size()-1)==arr[i]){
-                 stk.remove(stk.size()-1);
-              }else{
-                 stk.add(arr[i]);
-              }
+              stk.push(arr[i]);
            }
         }
         
-        if(stk.isEmpty()) stk.add(-1);
+        if(stk.isEmpty()) stk.push(-1);
         
         return stk.stream().mapToInt(i->i).toArray();
     }
