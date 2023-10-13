@@ -1,7 +1,7 @@
 class Solution {
     boolean solution(String s) {
         String str = s.toLowerCase();
-        return count(str,"p") == count(str,"y") ? true : false;
+        return count(str,"p") == count(str,"y");
     }
     
     public static int count(String str, String c) {
