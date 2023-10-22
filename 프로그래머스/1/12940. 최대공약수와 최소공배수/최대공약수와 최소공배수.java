@@ -17,7 +17,7 @@ class Solution {
         }
     }
     
-    //최대 공배수
+    //최소 공배수
     public static int lcm(int a,int b){
         int g = gcd(a,b);
         return g * (a/g) * (b/g);
