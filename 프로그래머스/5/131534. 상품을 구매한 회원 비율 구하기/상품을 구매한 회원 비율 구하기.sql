@@ -2,9 +2,11 @@
 SELECT   YEAR(OS.SALES_DATE) AS YEAR
    ,     MONTH(OS.SALES_DATE) AS MONTH
    ,     COUNT(DISTINCT UI.USER_ID) AS PUCHASED_USERS
-   ,     ROUND((COUNT(DISTINCT UI.USER_ID)/(SELECT COUNT(*) 
-                                  FROM USER_INFO 
-                                  WHERE YEAR(JOINED) = '2021')),1) AS PUCHASED_RATIO
+   ,     ROUND((COUNT(DISTINCT UI.USER_ID)/
+               (SELECT COUNT(*) 
+                FROM USER_INFO 
+                WHERE YEAR(JOINED) = '2021')),1
+              ) AS PUCHASED_RATIO
 FROM     ONLINE_SALE OS
 LEFT OUTER
 JOIN     USER_INFO UI
