@@ -3,8 +3,8 @@ import java.util.*;
 class Solution {
     public int solution(String[] friends, String[] gifts) {
         int answer = 0;
-        int[][] total = new int[friends.length][friends.length];
-        Map<String, Integer> map = new HashMap<>();
+        int[][] total = new int[friends.length][friends.length]; //주고 받은 선물을 담을 배열
+        Map<String, Integer> map = new HashMap<>(); //선물 지수를 답을 Map
 
         for (String friend : friends) {
             map.put(friend, 0);
