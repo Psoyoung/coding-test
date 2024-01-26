@@ -4,11 +4,17 @@ import java.util.stream.Collectors;
 class Solution {
     public String solution(String[] survey, int[] choices) {
         String answer = "";
-        Character[] arr = {'R', 'T', 'C', 'F', 'J', 'M', 'A', 'N'};
+        Character[] type = {'R', 'T', 'C', 'F', 'J', 'M', 'A', 'N'};
 
-        Map<Character, Integer> map = Arrays.stream(arr)
+        Map<Character, Integer> map = Arrays.stream(type)
                                         .collect(Collectors.toMap(c->c, c->0));
 
+//         Map<Character, Integer> map = new HashMap<>();
+        
+//         for (Character c : type) {
+//             map.put(c, 0);
+//         }
+        
         for(int i = 0; i < survey.length; i++) {
             char s1 = survey[i].charAt(0);
             char s2 = survey[i].charAt(1);
@@ -35,9 +41,9 @@ class Solution {
             }
         }
 
-        for(int i = 0; i < arr.length; i+=2) {
-            char c1 = arr[i];
-            char c2 = arr[i+1];
+        for(int i = 0; i < type.length; i+=2) {
+            char c1 = type[i];
+            char c2 = type[i+1];
 
             if(map.get(c1) == map.get(c2)) {
                 answer += Character.compare(c1, c2) < 0 ? c1 : c2;
